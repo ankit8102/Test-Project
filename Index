@@ -12,11 +12,11 @@
         <!-- Define Assets for the Scene -->
         <a-assets>
             <!-- Reference the 3D model from your GitHub -->
-            <a-asset-item id="model" src="https://yourusername.github.io/your-repository/assets/model.glb"></a-asset-item>
+            <a-asset-item id="model" src="https://github.com/ankit8102/Test-Project/blob/main/assets/model.glb"></a-asset-item>
         </a-assets>
 
         <!-- Define a target image for AR tracking -->
-        <a-marker preset="custom" type="pattern" url="https://yourusername.github.io/your-repository/assets/target-image.patt">
+        <a-marker preset="custom" type="pattern" url="https://github.com/ankit8102/Test-Project/blob/main/assets/pattern-target-image.patt">
             <!-- Place the 3D model on the detected target -->
             <a-entity 
                 gltf-model="#model" 
