@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>AR Image Tracking Example</title>
+<html>
+  <head>
+    <title>3D Model AR Viewer</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-</head>
-<body style="margin: 0; overflow: hidden;">
-    <!-- A-Frame Scene Setup -->
-    <a-scene embedded arjs="sourceType: webcam;">
-        <!-- Define Assets for the Scene -->
-        <a-assets>
-            <!-- Reference the 3D model from your GitHub -->
-            <a-asset-item id="model" src="https://raw.githubusercontent.com/ankit8102/Test-Project/refs/heads/main/assets/model.glb"></a-asset-item>
-        </a-assets>
-
-        <!-- Define a target image for AR tracking -->
-        <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/ankit8102/Test-Project/refs/heads/main/assets/pattern-target-image.patt">
-            <!-- Place the 3D model on the detected target -->
-            <a-entity 
-                gltf-model="#model" 
-                scale="0.5 0.5 0.5" 
-                position="0 0 0" 
-                rotation="0 45 0">
-            </a-entity>
-        </a-marker>
-
-        <!-- Add a camera to the scene -->
-        <a-entity camera></a-entity>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene embedded arjs>
+      <!-- Marker Definition -->
+      <a-marker preset="custom" type="pattern" url="pattern-target-image.patt">
+        <!-- 3D Model -->
+        <a-entity 
+          gltf-model="https://ankit8102.github.io/test-project/model.glb"
+          scale="0.5 0.5 0.5"
+          position="0 0 0">
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
-</body>
+  </body>
 </html>
+
+<!-- Instructions -->
+<!-- Replace 'path/to/your-marker.patt' with the actual path to your pattern file (.patt) -->
+<!-- Replace 'YOUR_GITHUB_USER' and 'YOUR_REPO' with your GitHub username and repository name, respectively -->
+<!-- Make sure to host the marker file and the 3D model in your GitHub repository for proper access -->
